@@ -116,10 +116,9 @@ public class Player
 		}
 	}
 
-	private void playNext()
+	private synchronized void playNext()
 	{
-		Index++;
-		if (Index == playList.length)
+		if (Index + 1 == playList.length)
 		{
 			isPlaying = false;
 			Index = -1;
@@ -128,6 +127,7 @@ public class Player
 		}
 		else if(isPlaying)
 		{
+			Index++;
 			playTune();
 		}
 	}
@@ -144,16 +144,23 @@ public class Player
 
 	void play()
 	{
-		Index = -1;
 		isPlaying = true;
 		playNext();
+	}
+
+	void pause()
+	{
+		isPlaying = false;
+		if(currentPlayer!=null && currentPlayer.isPlaying())
+			currentPlayer.stop();
 	}
 
 	void stop()
 	{
 		isPlaying = false;
-		if(currentPlayer!=null)
+		if(currentPlayer!=null && currentPlayer.isPlaying())
 			currentPlayer.stop();
+		Index = -1;
 	}
 
 	boolean isPlaying()

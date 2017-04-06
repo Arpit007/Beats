@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity
 			@Override
 			public void onPlayerStopped()
 			{
-				(( Button)findViewById(R.id.Play)).setText(R.string.Play);
+				findViewById(R.id.Stop).setVisibility(View.GONE);
+				findViewById(R.id.Pause).setVisibility(View.GONE);
+				findViewById(R.id.Play).setVisibility(View.VISIBLE);
 			}
 		});
 	}
@@ -33,18 +35,38 @@ public class MainActivity extends AppCompatActivity
 			Toast.makeText(this,"Enter Some Notes",Toast.LENGTH_SHORT).show();
 		}
 		else
-		if(!player.isPlaying())
 		{
-			(( Button)findViewById(R.id.Play)).setText(R.string.Stop);
+			((Button)findViewById(R.id.Pause)).setText(R.string.Pause);
+			findViewById(R.id.Stop).setVisibility(View.VISIBLE);
+			findViewById(R.id.Pause).setVisibility(View.VISIBLE);
+			findViewById(R.id.Play).setVisibility(View.GONE);
 			player.loadPlayList(Text);
 			player.play();
 		}
+	}
+
+	public void Pause(View view)
+	{
+		if(player.isPlaying())
+		{
+			player.pause();
+			((Button)findViewById(R.id.Pause)).setText(R.string.Resume);
+		}
 		else
 		{
-			(( Button)findViewById(R.id.Play)).setText(R.string.Play);
-			player.stop();
+			player.play();
+			((Button)findViewById(R.id.Pause)).setText(R.string.Pause);
 		}
 	}
+
+	public void Stop(View view)
+	{
+		findViewById(R.id.Stop).setVisibility(View.GONE);
+		findViewById(R.id.Pause).setVisibility(View.GONE);
+		findViewById(R.id.Play).setVisibility(View.VISIBLE);
+		player.stop();
+	}
+
 	public void Sample(View view)
 	{
 		String Notes="C1 D1 E1 C1 . . .\n" +
