@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Beats</string>
+    <string name="Hint">Music Notes...</string>
+    <string name="Play">Play</string>
+    <string name="Stop">Stop</string>
+    <string name="Sample">Sample</string>
+</resources>

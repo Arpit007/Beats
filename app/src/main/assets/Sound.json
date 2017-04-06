@@ -1,0 +1,62 @@
+{
+    "Sounds":[
+        {
+            "Key": "a1",
+            "File": "wav/a1.wav"
+        },
+        {
+            "Key": "a1s",
+            "File": "wav/a1s.wav"
+        },
+        {
+            "Key": "b1",
+            "File": "wav/b1.wav"
+        },
+        {
+            "Key": "c1",
+            "File": "wav/c1.wav"
+        },
+        {
+            "Key": "c1s",
+            "File": "wav/c1s.wav"
+        },
+        {
+            "Key": "c2",
+            "File": "wav/c2.wav"
+        },
+        {
+            "Key": "d1",
+            "File": "wav/d1.wav"
+        },
+        {
+            "Key": "d1s",
+            "File": "wav/d1s.wav"
+        },
+        {
+            "Key": "e1",
+            "File": "wav/e1.wav"
+        },
+        {
+            "Key": "f1",
+            "File": "wav/f1.wav"
+        },
+        {
+            "Key": "f1s",
+            "File": "wav/f1s.wav"
+        },
+        {
+            "Key": "g1",
+            "File": "wav/g1.wav"
+        },
+        {
+            "Key": "g1s",
+            "File": "wav/g1s.wav"
+        }
+    ],
+    "Silence":[
+        {
+            "Key": ".",
+            "Duration": 50
+        }
+    ]
+}
